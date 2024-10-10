@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestion des Défauts</title>
+    <!-- Include Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-50 text-gray-900">
+
+<!-- Header Section -->
+<header class="bg-blue-600 text-white p-6">
+    <h1 class="text-4xl font-bold text-center">Gestion des Défauts</h1>
+</header>
+
+<!-- Navigation Bar -->
+<nav class="bg-blue-500 p-4">
+    <ul class="flex justify-center space-x-6">
+        <li><a href="index.html" class="text-white hover:text-yellow-300">Accueil</a></li>
+        <li><a href="estimation.html" class="text-white hover:text-yellow-300">Estimations</a></li>
+        <li><a href="priorisation.html" class="text-white hover:text-yellow-300">Priorisation</a></li>
+        <li><a href="gestion-risques.html" class="text-white hover:text-yellow-300">Gestion des Risques</a></li>
+        <li><a href="metriques.html" class="text-white hover:text-yellow-300">Métriques</a></li>
+        <li><a href="gestion-config.html" class="text-white hover:text-yellow-300">Gestion de Configuration</a></li>
+        <li><a href="defauts.html" class="text-white hover:text-yellow-300">Gestion des Défauts</a></li>
+    </ul>
+</nav>
+
+<!-- Main Content -->
+<main class="container mx-auto p-8">
+    <h2 class="text-2xl font-semibold mb-6">Exercice interactif : Gestion des Défauts</h2>
+    <p class="text-lg leading-relaxed mb-4">
+        Rédigez un rapport de défaut en complétant les informations suivantes.
+    </p>
+
+    <form class="space-y-4">
+        <div>
+            <label for="defectTitle" class="block text-lg">Titre du défaut :</label>
+            <input type="text" id="defectTitle" class="w-full p-2 border border-gray-300 rounded" placeholder="Titre du défaut" required>
+        </div>
+
+        <div>
+            <label for="defectDescription" class="block text-lg">Description du défaut :</label>
+            <textarea id="defectDescription" class="w-full p-2 border border-gray-300 rounded" rows="4" placeholder="Décrivez le problème" required></textarea>
+        </div>
+
+        <div>
+            <label for="severity" class="block text-lg">Sévérité :</label>
+            <select id="severity" class="w-full p-2 border border-gray-300 rounded" required>
+                <option value="low">Faible</option>
+                <option value="medium">Moyenne</option>
+                <option value="high">Élevée</option>
+            </select>
+        </div>
+
+        <button type="button" class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-500" onclick="submitDefect()">Soumettre le défaut</button>
+    </form>
+
+    <div id="defectReport" class="mt-6"></div>
+</main>
+
+<!-- Footer -->
+<footer class="bg-gray-800 text-white text-center py-4">
+    <p>Copyright Belhaj Ouajdi 2024</p>
+</footer>
+
+<script src="js/script.js"></script>
+</body>
+</html>

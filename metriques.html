@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Métriques de Test</title>
+    <!-- Include Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Include Chart.js for the graphical visualization -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body class="bg-gray-50 text-gray-900">
+
+<!-- Header Section -->
+<header class="bg-blue-600 text-white p-6">
+    <h1 class="text-4xl font-bold text-center">Métriques de Test</h1>
+</header>
+
+<!-- Navigation Bar -->
+<nav class="bg-blue-500 p-4">
+    <ul class="flex justify-center space-x-6">
+        <li><a href="index.html" class="text-white hover:text-yellow-300">Accueil</a></li>
+        <li><a href="estimation.html" class="text-white hover:text-yellow-300">Estimations</a></li>
+        <li><a href="priorisation.html" class="text-white hover:text-yellow-300">Priorisation</a></li>
+        <li><a href="gestion-risques.html" class="text-white hover:text-yellow-300">Gestion des Risques</a></li>
+        <li><a href="metriques.html" class="text-white hover:text-yellow-300">Métriques</a></li>
+        <li><a href="gestion-config.html" class="text-white hover:text-yellow-300">Gestion de Configuration</a></li>
+        <li><a href="defauts.html" class="text-white hover:text-yellow-300">Gestion des Défauts</a></li>
+    </ul>
+</nav>
+
+<!-- Main Content -->
+<main class="container mx-auto p-8">
+    <h2 class="text-2xl font-semibold mb-6">Exercice interactif : Saisie des Métriques</h2>
+    <p class="text-lg leading-relaxed mb-4">
+        Saisissez vos données de test pour visualiser les métriques sous forme de graphique.
+    </p>
+
+    <form class="space-y-4">
+        <div>
+            <label for="executed" class="block text-lg">Nombre de tests exécutés :</label>
+            <input type="number" id="executed" class="w-full p-2 border border-gray-300 rounded" placeholder="Nombre de tests exécutés" required>
+        </div>
+
+        <div>
+            <label for="passed" class="block text-lg">Nombre de tests réussis :</label>
+            <input type="number" id="passed" class="w-full p-2 border border-gray-300 rounded" placeholder="Nombre de tests réussis" required>
+        </div>
+
+        <div>
+            <label for="failed" class="block text-lg">Nombre de tests échoués :</label>
+            <input type="number" id="failed" class="w-full p-2 border border-gray-300 rounded" placeholder="Nombre de tests échoués" required>
+        </div>
+
+        <button type="button" class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-500" onclick="showMetrics()">Afficher les Métriques</button>
+    </form>
+
+    <!-- Chart.js graph container -->
+    <canvas id="metricsChart" class="mt-6"></canvas>
+</main>
+
+<!-- Footer -->
+<footer class="bg-gray-800 text-white text-center py-4">
+    <p>Copyright Belhaj Ouajdi 2024</p>
+</footer>
+
+<script src="js/script.js"></script>
+</body>
+</html>

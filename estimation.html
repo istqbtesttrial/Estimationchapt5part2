@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Estimations</title>
+    <!-- Include Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-50 text-gray-900">
+
+<!-- Header Section -->
+<header class="bg-blue-600 text-white p-6">
+    <h1 class="text-4xl font-bold text-center">Pratique des Techniques d'Estimation</h1>
+</header>
+
+<!-- Navigation Bar -->
+<nav class="bg-blue-500 p-4">
+    <ul class="flex justify-center space-x-6">
+        <li><a href="index.html" class="text-white hover:text-yellow-300">Accueil</a></li>
+        <li><a href="estimation.html" class="text-white hover:text-yellow-300">Estimations</a></li>
+        <li><a href="priorisation.html" class="text-white hover:text-yellow-300">Priorisation</a></li>
+        <li><a href="gestion-risques.html" class="text-white hover:text-yellow-300">Gestion des Risques</a></li>
+        <li><a href="metriques.html" class="text-white hover:text-yellow-300">Métriques</a></li>
+        <li><a href="gestion-config.html" class="text-white hover:text-yellow-300">Gestion de Configuration</a></li>
+        <li><a href="defauts.html" class="text-white hover:text-yellow-300">Gestion des Défauts</a></li>
+    </ul>
+</nav>
+
+<!-- Main Content -->
+<main class="container mx-auto p-8">
+    <h2 class="text-2xl font-semibold mb-6">Exercice interactif : Estimations</h2>
+    <p class="text-lg leading-relaxed mb-4">
+        Saisissez vos valeurs pour l'estimation optimiste, la plus probable et pessimiste, puis obtenez l'estimation finale avec l'erreur de mesure.
+    </p>
+
+    <!-- Form for input values -->
+    <form class="space-y-4">
+        <div>
+            <label for="optimistic" class="block text-lg">Estimation optimiste (a) :</label>
+            <input type="number" id="optimistic" class="w-full p-2 border border-gray-300 rounded" placeholder="Saisissez la valeur optimiste" required>
+        </div>
+
+        <div>
+            <label for="most_likely" class="block text-lg">Estimation la plus probable (m) :</label>
+            <input type="number" id="most_likely" class="w-full p-2 border border-gray-300 rounded" placeholder="Saisissez la valeur la plus probable" required>
+        </div>
+
+        <div>
+            <label for="pessimistic" class="block text-lg">Estimation pessimiste (b) :</label>
+            <input type="number" id="pessimistic" class="w-full p-2 border border-gray-300 rounded" placeholder="Saisissez la valeur pessimiste" required>
+        </div>
+
+        <button type="button" class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-500" onclick="calculateEstimation()">Calculer</button>
+    </form>
+
+    <!-- Display result -->
+    <p id="result" class="mt-6 text-lg font-semibold text-green-600"></p>
+
+    <!-- Display the formula used -->
+    <section id="formula" class="mt-6 text-gray-700">
+        <h3 class="text-xl font-semibold">Formule utilisée :</h3>
+        <p>Estimation = (a + 4 * m + b) / 6</p>
+        <p>Erreur = (b - a) / 6</p>
+    </section>
+
+    <!-- Random Exercise Section -->
+    <section id="randomExercise" class="mt-12 text-gray-700">
+        <h3 class="text-xl font-semibold">Exercice aléatoire :</h3>
+        <p>Calculez l'estimation pour les valeurs suivantes :</p>
+        <p id="randomValues" class="text-lg font-semibold"></p>
+        <button type="button" class="mt-4 bg-yellow-500 text-white px-4 py-2 rounded hover:bg-yellow-400" onclick="generateRandomExercise()">Générer un nouvel exercice</button>
+        <button type="button" class="mt-4 bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-400" onclick="copyValues()">Copier les valeurs</button>
+        <button type="button" class="mt-4 bg-green-500 text-white px-4 py-2 rounded hover:bg-green-400" onclick="showSolution()">Afficher la solution</button>
+
+        <div id="solution" class="mt-6 text-lg text-gray-800"></div>
+    </section>
+
+</main>
+
+<!-- Footer -->
+<footer class="bg-gray-800 text-white text-center py-4">
+    <p>&copy; Belhaj Ouajdi 2024</p>
+</footer>
+
+<script src="js/script.js"></script>
+
+</body>
+</html>

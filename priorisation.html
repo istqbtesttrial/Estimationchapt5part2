@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Priorisation des Cas de Test</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <!-- Include Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Include Sortable.js for drag-and-drop functionality -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Sortable/1.14.0/Sortable.min.js"></script>
+</head>
+<body>
+<!-- Header Section with gradient background -->
+<header class="gradient-background">
+    <h1 class="text-4xl font-bold text-center">Priorisation des Cas de Test</h1>
+</header>
+
+<!-- Navigation Bar -->
+<nav class="bg-blue-500 p-4">
+    <ul class="flex justify-center space-x-6">
+        <li><a href="index.html" class="text-white hover:text-yellow-300">Accueil</a></li>
+        <li><a href="estimation.html" class="text-white hover:text-yellow-300">Estimations</a></li>
+        <li><a href="priorisation.html" class="text-white hover:text-yellow-300">Priorisation</a></li>
+        <li><a href="gestion-risques.html" class="text-white hover:text-yellow-300">Gestion des Risques</a></li>
+        <li><a href="metriques.html" class="text-white hover:text-yellow-300">Métriques</a></li>
+        <li><a href="gestion-config.html" class="text-white hover:text-yellow-300">Gestion de Configuration</a></li>
+        <li><a href="defauts.html" class="text-white hover:text-yellow-300">Gestion des Défauts</a></li>
+    </ul>
+</nav>
+
+<!-- Main Content -->
+<main class="container mx-auto p-8">
+    <!-- Exercice 1 -->
+    <h2 class="text-2xl font-semibold mb-6">Exercice interactif : Priorisation des Cas de Test</h2>
+    <p class="text-lg leading-relaxed mb-4">
+        Classez les cas de test en fonction de leur priorité en les déplaçant dans l'ordre correct.
+    </p>
+
+    <ul id="sortable" class="bg-white p-4 rounded shadow space-y-4">
+        <li class="bg-gray-100 p-4 rounded shadow">Cas de test 1 (faible priorité)</li>
+        <li class="bg-gray-100 p-4 rounded shadow">Cas de test 2 (priorité moyenne)</li>
+        <li class="bg-gray-100 p-4 rounded shadow">Cas de test 3 (haute priorité)</li>
+    </ul>
+
+    <button type="button" class="bg-blue-600 text-white px-4 py-2 mt-6 rounded hover:bg-blue-500" onclick="validateOrder()">Valider l'ordre</button>
+    <p id="validationResult" class="mt-4 text-lg font-semibold"></p>
+
+    <!-- Exercice 2 : Priorisation avec dépendances -->
+    <h2 class="text-2xl font-semibold mt-12 mb-6">Exercice interactif : Priorisation avec dépendances</h2>
+    <p class="text-lg leading-relaxed mb-4">
+        Classez les cas de test en fonction de leur priorité et de leurs dépendances.
+    </p>
+
+    <ul id="sortable2" class="bg-white p-4 rounded shadow space-y-4">
+        <li class="bg-gray-100 p-4 rounded shadow">Cas de test 1 (Priorité Moyenne, Dépendance: Aucun)</li>
+        <li class="bg-gray-100 p-4 rounded shadow">Cas de test 2 (Priorité Haute, Dépendance: Cas de test 3)</li>
+        <li class="bg-gray-100 p-4 rounded shadow">Cas de test 3 (Priorité Faible, Dépendance: Aucun)</li>
+        <li class="bg-gray-100 p-4 rounded shadow">Cas de test 4 (Priorité Très Haute, Dépendance: Cas de test 1)</li>
+        <li class="bg-gray-100 p-4 rounded shadow">Cas de test 5 (Priorité Moyenne, Dépendance: Cas de test 2)</li>
+    </ul>
+
+    <button type="button" class="bg-blue-600 text-white px-4 py-2 mt-6 rounded hover:bg-blue-500" onclick="validateOrder2()">Valider l'ordre</button>
+    <p id="validationResult2" class="mt-4 text-lg font-semibold"></p>
+</main>
+
+<!-- Footer -->
+<footer class="bg-gray-800 text-white text-center py-4">
+    <p>&copy; Belhaj Ouajdi 2024</p>
+</footer>
+
+<script src="js/script.js"></script>
+<script>
+    // Initialisation de Sortable.js pour les deux exercices
+    var sortable = new Sortable(document.getElementById('sortable'), {
+        animation: 150,
+    });
+
+    var sortable2 = new Sortable(document.getElementById('sortable2'), {
+        animation: 150,
+    });
+</script>
+</body>

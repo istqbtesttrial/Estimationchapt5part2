@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestion des Risques</title>
+    <!-- Include Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-50 text-gray-900">
+
+<!-- Header Section -->
+<header class="bg-blue-600 text-white p-6">
+    <h1 class="text-4xl font-bold text-center">Gestion des Risques</h1>
+</header>
+
+<!-- Navigation Bar -->
+<nav class="bg-blue-500 p-4">
+    <ul class="flex justify-center space-x-6">
+        <li><a href="index.html" class="text-white hover:text-yellow-300">Accueil</a></li>
+        <li><a href="estimation.html" class="text-white hover:text-yellow-300">Estimations</a></li>
+        <li><a href="priorisation.html" class="text-white hover:text-yellow-300">Priorisation</a></li>
+        <li><a href="gestion-risques.html" class="text-white hover:text-yellow-300">Gestion des Risques</a></li>
+        <li><a href="metriques.html" class="text-white hover:text-yellow-300">Métriques</a></li>
+        <li><a href="gestion-config.html" class="text-white hover:text-yellow-300">Gestion de Configuration</a></li>
+        <li><a href="defauts.html" class="text-white hover:text-yellow-300">Gestion des Défauts</a></li>
+    </ul>
+</nav>
+
+<!-- Main Content -->
+<main class="container mx-auto p-8">
+    <h2 class="text-2xl font-semibold mb-6">Exercice théorique : Gestion des Risques</h2>
+    <p class="text-lg leading-relaxed mb-4">
+        Sélectionnez un scénario et répondez à la question sur l'analyse et le contrôle des risques.
+    </p>
+
+    <!-- Dropdown for selecting scenarios -->
+    <div class="mb-4">
+        <label for="scenario" class="block text-lg font-semibold">Sélectionnez un scénario :</label>
+        <select id="scenario" class="w-full p-2 border border-gray-300 rounded">
+            <option value="1">Scénario 1 : Développement d'un nouveau logiciel avec une équipe réduite</option>
+            <option value="2">Scénario 2 : Migration de données critiques vers une nouvelle infrastructure</option>
+            <option value="3">Scénario 3 : Lancement d'une application mobile avec une date de livraison serrée</option>
+        </select>
+    </div>
+
+    <div class="mt-6">
+        <button type="button" class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-500" onclick="showRiskAnalysis()">Répondre</button>
+    </div>
+
+    <!-- Display result -->
+    <p id="riskResult" class="mt-6 text-lg font-semibold text-green-600"></p>
+</main>
+
+<!-- Footer -->
+<footer class="bg-gray-800 text-white text-center py-4">
+    <p>&copy; Belhaj Ouajdi 2024</p>
+</footer>
+
+<script src="js/script.js"></script>
+</body>
+</html>
